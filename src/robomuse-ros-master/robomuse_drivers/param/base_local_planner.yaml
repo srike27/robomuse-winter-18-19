@@ -1,0 +1,33 @@
+# Robot Configuration Parameters
+TrajectoryPlannerROS:
+    acc_lim_x: 0.15
+    acc_lim_y: 0.25
+    acc_lim_th: 1
+    max_vel_x: 0.2
+    min_vel_x: 0.1
+    max_rotational_vel: 0.2
+    min_in_place_rotational_vel: 0.1
+    holonomic_robot: false
+
+    # Goal Tolerance Parameters
+    xy_goal_tolerance: 0.1
+    yaw_goal_tolerance: 0.1
+    latch_xy_goal_tolerance: true
+
+    # Forward Simulation Parameters
+    sim_time: 1.5
+    sim_granularity: 0.025
+    vx_samples: 3
+    vtheta_samples: 6
+
+    # Trajectory Scoring Parameters
+    meter_scoring: true
+
+    pdist_scale: 0.5 # The higher will follow more the global path.
+    gdist_scale: 0.8
+    occdist_scale: 0.01
+    publish_cost_grid_pc: false
+
+    #move_base
+    controller_frequency: 10.0 #The robot can move faster when higher.
+

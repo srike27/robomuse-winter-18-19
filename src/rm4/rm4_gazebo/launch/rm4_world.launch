@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <arg name="world" default="empty"/> 
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>-
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!--arg name="world_name" value="$(find rm4_gazebo)/worlds/rm4.world"/-->
+    <!--arg name="world_name" value="$(find rm4_gazebo)/worlds/rm4_playground.world"/-->
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>s
+
+  <!-- Load Depth Registered to Laser convertor . -->
+	<include file = "$(find rm4_bringup)/launch/fake_rm4_gazebo.launch"/>
+    
+ <!-- Load Robomuse's description, controllers, and teleop nodes. -->
+  
+  <!--node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/-->
+
+    <param name="robot_description" command="$(find xacro)/xacro $(find rm4_description)/urdf/robots/robomuse.urdf.xacro" />
+
+  <node name="robomuse_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-urdf -param robot_description -model robomuse -x 0 -y 0 -z 0.1" />
+
+</launch>

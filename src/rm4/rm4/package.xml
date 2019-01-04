@@ -1,0 +1,28 @@
+<package>
+  <name>rm4</name>
+  <version>0.4.0</version>
+  <description>ROS By Example Volume 1</description>
+  <maintainer email="patrick@pirobot.org">Patrick Goebel</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/rm4_vol_1</url>
+
+  <url type="bugtracker">https://github.com/pirobot/rm4/issues</url>
+
+  <author email="patrick@pirobot.org">Maintained by Patrick Goebel</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>rm4_description</run_depend>
+  <run_depend>rm4_speech</run_depend>
+  <run_depend>rm4_dynamixels</run_depend>
+  <run_depend>rm4_nav</run_depend>
+  <run_depend>rm4_apps</run_depend>
+  <run_depend>rm4_bringup</run_depend>
+  <run_depend>rm4_vision</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="rm4_vision" name="webcam_demo" type="webcam_cv3.py" output="screen">
+    <remap from="/image_topic_2" to="/image_topic" />
+    <!--remap from="input_depth_image" to="/camera/depth/image_rect" /-->
+  </node>
+  
+</launch>

@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="rm4_vision" name="image_converter" type="feedRecord.py" output = "screen"/>
+  <node pkg="rm4_nav" name="fixedPath" type="nav_square.py"/>
+  <node pkg="rm4_vision" name="encryptNode" type="encryptVid.py"/>
+
+</launch>
